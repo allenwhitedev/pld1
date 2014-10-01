@@ -1,0 +1,68 @@
+@import 'bootstrap';
+
+body {
+	padding-top: 60px;
+	background-color: #eeecef;	
+}
+
+#black-attempt {
+	color: red;
+	/* sublime black background-color: #272822; */
+	background-color: #7D3B56;
+}
+
+.fb-login-button {
+	display: inline;
+	float: left;
+	margin-top: .45em;
+}
+
+#logo {
+	font-size: 1.85em;
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-size: 1.25em;
+    &:hover {
+    	text-decoration: underline;
+    	color: #fff;
+    }
+}
+
+.cal-wrapper {
+	margin: 0 auto 0 auto;
+	width: 80%; 
+	height: 600px; 
+}
+
+.cal-day {
+	height: 20%;
+	width: 100%;
+	background-color: #fff;
+	margin: 1px;
+}
+
+.cal-column {
+	float: left;
+	width: 14.19%;
+	height: 100%;
+	font-size: 2.25em;
+	float: left;
+	margin-right:1px;
+}
+
+.day-box {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
