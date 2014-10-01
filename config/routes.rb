@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
 
+  match '/help', to: 'pages#help', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
