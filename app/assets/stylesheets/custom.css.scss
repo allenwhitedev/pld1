@@ -46,10 +46,10 @@ body {
 
 .cal-column, .day-day {
 	float: left;
-	width: 14.19%;
+	width: 14%;
 	height: 100%;
 	font-size: 2.25em;
-	margin-right:1px;
+	margin-right: 1px;
 }
 
 .day-box {
@@ -72,7 +72,42 @@ body {
 	color: red;
 	padding: 0; 
 	height: 4em;
+	width: calc(100% - 14px)
 	}
+
+@media screen and (max-width : 1120px) {
+
+	.cal-wrapper {
+		width: 100%;
+	}
+
+	.cal-column, .day-day {
+	float: left;
+	width: 13.5%;
+	height: 90%;
+	font-size: 1.75em;
+	margin-right:1px;
+	}
+
+	#DOW {
+		width: calc(94.5% + 7px);
+	}
+
+	.full-day {
+		display: none;
+	}
+
+	.abbr-day {
+		display: auto;	
+		float: center;
+		background-color: pink;
+		width: 110%;
+	}
+
+
+}
+
+
 
 
 
