@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
+  get 'users/new'
+
+  get 'users/show'
+
   root 'pages#fb_test1'
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
 
   match '/help', to: 'pages#help', via: 'get'
+
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

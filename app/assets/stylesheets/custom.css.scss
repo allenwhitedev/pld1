@@ -31,7 +31,9 @@ body {
     }
 }
 
-.cal-wrapper {
+/* CALENDAR STYLINGS (Plus some form stylings) */
+
+.cal-wrapper, .gen-wrapper {
 	margin: 0 auto 0 auto;
 	width: 80%; 
 	height: 600px; 
@@ -103,18 +105,36 @@ body {
 		background-color: pink;
 		width: 110%;
 	}
-
-
 }
 
+.input-group-addon {
+	font-size: 2em;
+}
 
+.form-area {
+	margin: 0 auto 0 auto;
+	width: 40%;
+}
 
+.form-area > * {
+	margin-bottom: 16px;
+	font-size: 1.5em;
+}
 
+/* forms */
 
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  	
+}
 
+input {
+  height: 2em !important;
+}
 
-
-
+/* Media queries for non calendar pages */
 
 
 
