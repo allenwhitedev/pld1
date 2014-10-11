@@ -114,6 +114,7 @@ body {
 .form-area {
 	margin: 0 auto 0 auto;
 	width: 40%;
+
 }
 
 .form-area > * {
@@ -134,9 +135,28 @@ input {
   height: 2em !important;
 }
 
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+
 /* Media queries for non calendar pages */
 
-
+@media screen and (max-width : 1120px) {
+	.form-area {
+		width: 60%;
+	}
+	
+}
 
 
 
