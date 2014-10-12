@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   
-  get 'users/new'
-
-  get 'users/show'
-
   root 'pages#fb_test1'
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
 
   match '/help', to: 'pages#help', via: 'get'
 
+  match '/signup', to: 'users#new', via: 'get'
+
+  match '/signin', to: 'sessions#new', via: 'get'
+
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
   resources :users
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

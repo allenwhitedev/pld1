@@ -1,0 +1,18 @@
+<% provide(:title, "Sign in") %>
+
+<div class="row">
+  <div class="form-area">
+  <h1>HSA Login</h1><style>h1 {text-align: center;}</style>
+<%= form_for(:session, url: sessions_path) do |f|  %>
+	
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "Sign In", class: "btn btn-large btn-primary" %>
+<% end %>
+<p><%= link_to "Don't have a Pipeline account? Sign up Here", signup_path %></p>
+ </div>
+</div>
