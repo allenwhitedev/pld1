@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkincode: MyString
+  comment: MyString
+  attendance: false
+  user_id: 1
+
+two:
+  checkincode: MyString
+  comment: MyString
+  attendance: false
+  user_id: 1

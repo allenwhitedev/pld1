@@ -16,6 +16,13 @@ class PagesController < ApplicationController
 
   def pipeline
   end
+
+  def events
+    if signed_in?
+    @event = current_user.events.build #maybe signed_in_mod as well or instead
+    @feed_items = current_user.feed.paginate(page: params[:page])
+    end
+  end
 end
 
 

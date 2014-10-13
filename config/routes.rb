@@ -12,9 +12,13 @@ Rails.application.routes.draw do
 
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
+  match '/events', to: 'pages#events', via: 'get'
+
   resources :users
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :events, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
