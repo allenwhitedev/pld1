@@ -1,0 +1,13 @@
+<!-- This title and h1 will change depending on organization -->
+<% provide(:title, "HSA Users") %>
+<div class="container">
+
+<h1> HSA Pipeline Users</h1>
+<%= will_paginate %>
+
+<ul class="users">
+<%= render @users %>
+</ul>
+
+<%= will_paginate %>
+</div>
