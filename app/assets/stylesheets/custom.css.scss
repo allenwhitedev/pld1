@@ -102,7 +102,7 @@ body {
 	.abbr-day {
 		display: auto;	
 		float: center;
-		background-color: pink;
+		/* background-color: pink; show's resizing problems of day-truncation */
 		width: 110%;
 	}
 }
