@@ -3,6 +3,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :comment, placeholder: "Compose new event description..." %>
+    <%= datetime_field(:event, :event_time) %> <!-- Maybe use local datetime here in future -->
+    <%= date_select Date.today, prefix: :event_time %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
