@@ -1,7 +1,13 @@
 <li>
+	<span class="event_title">Event name: <%= event.title %></span>
   <span class="comment"><%= event.comment %></span>
+  <span class="points">Worth: <%= event.points %> pts.</span>
+  <br>
+  <!-- <span class="event_time">Happening at: <%= event.event_time %></span> 
+  <br> Datetime is tricky but will be added ocne it can be created in correct format -->
   <span class="timestamp">
     Posted <%= time_ago_in_words(event.created_at) %> ago.
+
   </span>
   <% if current_user?(event.user) %>
     <%= link_to "delete", event, method: :delete,

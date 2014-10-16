@@ -9,24 +9,28 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		@event = current_user.events.build(event_params)
+		@event = Event.new(event_params)
 		if @event.save
 			flash[:success] = "Event Created"
 			redirect_to events_url
 		else
 			@feed_items = []
-			render 'pages/events'
+			flash[:danger] = "Event failed to be created"
+			redirect_to events_url
 		end
 	end
 
 	def index
   	@events = Event.paginate(page: params[:page])
+  	@event = Event.new
   end
 
 private
 	
 	def event_params
-		params.require(:event).permit(:comment)
+		params.require(:event).permit(:title, :comment, :points, :event_time)
+		# NEED TO CONTROL WHAT ATTRIBUTES CAN BE SET TO PREVENT MASS ASSIGNEMNT
+	# WRITE A FUNCTIONING REQUIRE AND PERMIT LINE HERE LATER TO ONLY ALLOW CERTAIN ATTRIBUTES TO BE SET
 	end
 
 	def correct_user

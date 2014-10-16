@@ -4,6 +4,17 @@ module EventsHelper
     sanitize(raw(comment.split.map{ |s| wrap_long_string(s) }.join(' ')))
   end
 
+  def create
+    @event = current_user.events.build(event_params)
+    if @event.save
+      flash[:success] = "Event Created"
+      redirect_to events_url
+    else
+      @feed_items = []
+      render 'pages/events'
+    end
+  end
+
   private
 
     def wrap_long_string(text, max_width = 30)

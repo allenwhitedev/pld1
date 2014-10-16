@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015032552) do
+ActiveRecord::Schema.define(version: 20141015215930) do
 
   create_table "events", force: true do |t|
     t.string   "checkincode"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141015032552) do
     t.string   "title"
     t.datetime "event_time"
     t.string   "organization"
+    t.integer  "points"
   end
 
   add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141015032552) do
     t.boolean  "admin",           default: false
     t.boolean  "moderator",       default: false
     t.string   "organization"
+    t.integer  "total_points"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
