@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :events, dependent: :destroy
+	has_many :active_eu_rels, class_name: "EuRel", foreign_key: "attender_id", dependent: :destroy
+	has_many :attending, through: :active_eu_rels, source: :attended 
 	before_save { self.email = email.downcase }
 	validates :name, length: { in: 2..50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -19,6 +21,21 @@ class User < ActiveRecord::Base
 		#Will add so that only feed of organization(s) user belongs to is shown
 		Event.where("user_id = ?", id)
 	end
+
+	 # Attends an event
+  def attend(fun_event)
+    active_eu_rels.create(attended_id: fun_event.id)
+  end
+
+  # Unattend an event
+  def unattend(fun_event)
+    active_eu_rels.find_by(attended_id: fun_event.id).destroy
+  end
+
+  # True if user is attending the event
+  def attending?(fun_event)
+    attending.include?(fun_event)
+  end
 
 private
 	

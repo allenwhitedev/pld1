@@ -14,11 +14,20 @@ Rails.application.routes.draw do
 
   #match '/events', to: 'pages#events', via: 'get'
 
-  resources :users
+  resources :users do
+    member do
+      get :attending
+    end
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :events
+  resources :events  do
+    member do
+      get :attenders
+    end
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015215930) do
+ActiveRecord::Schema.define(version: 20141018224942) do
+
+  create_table "eu_relationships", force: true do |t|
+    t.string   "attendee_id"
+    t.string   "attending_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "eu_relationships", ["attendee_id", "attending_id"], name: "index_eu_relationships_on_attendee_id_and_attending_id", unique: true
+  add_index "eu_relationships", ["attendee_id"], name: "index_eu_relationships_on_attendee_id"
+  add_index "eu_relationships", ["attending_id"], name: "index_eu_relationships_on_attending_id"
+
+  create_table "eu_rels", force: true do |t|
+    t.integer  "attender_id"
+    t.integer  "attended_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "eu_rels", ["attended_id"], name: "index_eu_rels_on_attended_id"
+  add_index "eu_rels", ["attender_id", "attended_id"], name: "index_eu_rels_on_attender_id_and_attended_id", unique: true
+  add_index "eu_rels", ["attender_id"], name: "index_eu_rels_on_attender_id"
 
   create_table "events", force: true do |t|
     t.string   "checkincode"

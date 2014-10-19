@@ -9,9 +9,9 @@
     Posted <%= time_ago_in_words(event.created_at) %> ago.
 
   </span>
-  <% if current_user?(event.user) %>
+  <!-- USE AN IF/ELSE to hide display from non-mods -->
     <%= link_to "delete", event, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: event.comment %>
-  <% end %>
+  <!-- WRAP THIS IN CHECK FOR MODERATOR -->
 </li>

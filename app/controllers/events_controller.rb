@@ -3,6 +3,9 @@ class EventsController < ApplicationController
 	before_action :correct_user,   only: :destroy
 	# before_action :signed_in_mod, only: [:create, :destroy]
 
+
+	#should add show method for event(or have destroy go somewhere else but probably want to show individual events)
+
 	def destroy
 		@event.destroy
 		redirect_to events_url
