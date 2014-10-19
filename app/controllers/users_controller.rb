@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update, :index, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :attending]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
 
@@ -45,6 +45,14 @@ class UsersController < ApplicationController
   def index
   	@users = User.paginate(page: params[:page])
   end
+
+   def attending
+    @title = "Attending"
+    @user = User.find(params[:id])
+    @events = @user.attended_events.paginate(page: params[:page])
+    render 'show_attend'
+  end
+
 
 private
 

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :eu_rels, only: [:create, :destroy]
+
   resources :events  do
     member do
       get :attenders

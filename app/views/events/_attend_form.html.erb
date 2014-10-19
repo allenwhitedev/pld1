@@ -1,0 +1,6 @@
+<% if signed_in? %>
+  <div id="attend_form">
+ <!-- check to see if user is attending event before display(aka render 'attend') -->
+    <%= render 'attend' %>
+  </div>
+<% end %>

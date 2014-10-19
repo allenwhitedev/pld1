@@ -32,6 +32,13 @@ class EventsController < ApplicationController
   	@event = Event.find(params[:id])
   end
 
+  def attenders
+    @title = "Attenders"
+    @event = Event.find(params[:id])
+    @users = @user.attenders.paginate(page: params[:page])
+    render 'show_attend'
+  end
+
 private
 	
 	def event_params

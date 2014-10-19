@@ -1,0 +1,4 @@
+<%= form_for(current_user.eu_rels.build(attended_id: @event.id)) do |f| %>
+  <div><%= f.hidden_field :attended_id %></div>
+  <%= f.submit "Checkin to this Event", class: "btn btn-large btn-primary" %>
+<% end %>
