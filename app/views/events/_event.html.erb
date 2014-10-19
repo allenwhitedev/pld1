@@ -7,7 +7,7 @@
   <br> Datetime is tricky but will be added ocne it can be created in correct format -->
   <span class="timestamp">
     Posted <%= time_ago_in_words(event.created_at) %> ago.
-
+    <%= link_to event.title, event %>
   </span>
   <!-- USE AN IF/ELSE to hide display from non-mods -->
     <%= link_to "delete", event, method: :delete,
