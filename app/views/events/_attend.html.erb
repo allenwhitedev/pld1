@@ -1,4 +1,8 @@
+<% if !current_user.attending?(@event) %>
 <%= form_for(current_user.eu_rels.build(attended_id: @event.id)) do |f| %>
   <div><%= f.hidden_field :attended_id %></div>
   <%= f.submit "Checkin to this Event", class: "btn btn-large btn-primary" %>
+  <% end %>
+  <% else %>
+  <h1>You are checked in to this event.</h1>
 <% end %>
