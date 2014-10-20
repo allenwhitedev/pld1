@@ -39,10 +39,26 @@ class EventsController < ApplicationController
     render 'show_attend'
   end
 
+  def correct_code
+  	true
+  end
+
+  #see if you can make this private
+  def generate_checkincode
+  	 
+  end
+
+  #updates event with a checkincode, thus unlocking it
+  def update
+  	@event = Event.find(params[:id])
+  	@event.update_attribute(:checkincode, SecureRandom.urlsafe_base64)
+  	redirect_to event_url
+  end
+
 private
 	
 	def event_params
-		params.require(:event).permit(:title, :comment, :points, :event_time)
+		params.require(:event).permit(:title, :comment, :points, :event_time,)
 		# NEED TO CONTROL WHAT ATTRIBUTES CAN BE SET TO PREVENT MASS ASSIGNEMNT
 	# WRITE A FUNCTIONING REQUIRE AND PERMIT LINE HERE LATER TO ONLY ALLOW CERTAIN ATTRIBUTES TO BE SET
 	end

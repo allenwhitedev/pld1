@@ -4,6 +4,6 @@
   <% if current_user.admin? && !current_user(user) %>
   	<%= link_to "Delete This User", user, method: :delete, data: { confirm: "Are you absolutely sure? This will delete the user from Pipeline." } %>
   	<!-- link_to below currently just deletes the user -->
-  	<%= link_to "Make This User A Moderator", user, method: :delete, data: { confirm: "Are you absolutely sure? This will grant the user the ability to create events and allocate points for those events." } %>
+  	<%= link_to "Make This User A Moderator", user, method: :delete, data: { confirm: "Are you absolutely sure? This will grant the user the ability to create events, allocate points for events, and unlock events." } %>
   	<% end %>
 </li>

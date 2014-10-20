@@ -10,6 +10,7 @@
     <%= link_to event.title, event %>
   </span>
   <!-- USE AN IF/ELSE to hide display from non-mods -->
+    <%= link_to "Unlock Event", event, method: :patch %>
     <%= link_to "delete", event, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: event.comment %>
