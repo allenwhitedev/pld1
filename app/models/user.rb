@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
 	 # Attends an event
   def attend!(fun_event)
     eu_rels.create!(attended_id: fun_event.id)
+    self.total_points+=fun_event.points
   end
 
   # Unattend an event

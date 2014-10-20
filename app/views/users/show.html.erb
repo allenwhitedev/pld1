@@ -11,6 +11,7 @@
 	    </section>
 	  </aside>
 	  <div class="span8">
+	  <h1>Points: <%= @user.total_points %></h1>
 	  	<% if @user.events.any? %>
 	  		<h3>Events Attended: <%= @user.events.count %></h3>
 	  			<ol class="events">
