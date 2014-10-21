@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020014806) do
+ActiveRecord::Schema.define(version: 20141020224418) do
 
   create_table "eu_relationships", force: true do |t|
     t.string   "attendee_id"
@@ -61,8 +61,10 @@ ActiveRecord::Schema.define(version: 20141020014806) do
     t.boolean  "moderator",       default: false
     t.string   "organization"
     t.integer  "total_points",    default: 0
+    t.string   "code"
   end
 
+  add_index "users", ["code"], name: "index_users_on_code"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
